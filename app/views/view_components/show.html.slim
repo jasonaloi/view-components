@@ -1,0 +1,14 @@
+= render 'nav'
+main
+  h1=@view_component.titleize
+  hr
+  - if @examples
+  - else
+    p.lead No Examples Yet
+    br
+    p="Create examples in app/views/application/examples/#{@view_component}.html.slim"
+    p Render the component with any props you like.
+    p
+      | Separate multiple examples by enclosing each in an
+      code  &lt;article&gt; 
+      | tag.

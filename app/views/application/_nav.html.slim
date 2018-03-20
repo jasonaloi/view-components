@@ -1,0 +1,7 @@
+nav
+  br
+  h6
+    a(href=root_path) COMPONENTS
+    = render partial: "nav_link",
+          collection: @view_components,
+                  as: :item
