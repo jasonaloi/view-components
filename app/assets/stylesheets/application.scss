@@ -11,7 +11,12 @@ nav {
   height: 1000px;
 
   a {
-    @extend .nav-link, .text-light;
+    @extend .nav-link, .text-light, .text-center;
+  }
+
+  a.nav-item {
+    @extend .btn, .btn-outline-secondary;
+    margin: 5px 10px;
   }
 
 }

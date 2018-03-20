@@ -1,2 +1,4 @@
-a href=view_component_path(item)
-  =item.titleize
+a.nav-item {
+  href=view_component_path(item)
+  class=(@view_component==item ? 'active' : '')
+}=item.titleize
