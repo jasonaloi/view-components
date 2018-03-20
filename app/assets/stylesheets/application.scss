@@ -4,11 +4,11 @@
 
 main {
   @extend .col-md-9, .ml-sm-auto, .col-lg-10, .pt-3, .px-4;
+  height: 100vh;
 }
 
 nav {
   @extend .nav, .col-md-2, .flex-column, .bg-dark, .text-light;
-  height: 1000px;
 
   a {
     @extend .nav-link, .text-light, .text-center;
