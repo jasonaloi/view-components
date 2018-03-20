@@ -1,22 +1,20 @@
-= render 'nav'
-main
-  h1.display-4=@view_component.titleize
+h1.display-4=@view_component.titleize
+br
+- if @examples
+  = render partial: "view_component",
+        collection: @examples,
+                as: :item
+- else
+  p.lead.text-danger No Examples Yet
   br
-  - if @examples
-    = render partial: "view_component",
-          collection: @examples,
-                  as: :item
-  - else
-    p.lead.text-danger No Examples Yet
-    br
-    p
-      | Create an example at
-      code=" app/views/application/examples/#{@view_component}.html.slim"
-    p Just render the component with some props.
-    br
-    p Create more examples in separate files:
-    p
-      code=" app/views/application/examples/#{@view_component}--1.html.slim "
-      | or
-    p
-      code=" app/views/application/examples/#{@view_component}--special.html.slim"
+  p
+    | Create an example at
+    code=" app/views/application/examples/#{@view_component}.html.slim"
+  p Just render the component with some props.
+  br
+  p Create more examples in separate files:
+  p
+    code=" app/views/application/examples/#{@view_component}--1.html.slim "
+    | or
+  p
+    code=" app/views/application/examples/#{@view_component}--special.html.slim"

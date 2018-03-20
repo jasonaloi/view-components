@@ -11,4 +11,6 @@ html lang='en'
   body
     .container-fluid
       .row
-        = yield
+        = render 'sidebar'
+        main role='main'
+          = yield

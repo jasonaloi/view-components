@@ -1,13 +1,15 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-
-main {
-  @extend .col-md-9, .ml-sm-auto, .col-lg-10, .pt-3, .px-4;
+body {
   height: 100vh;
 }
 
-nav {
+main {
+  @extend .col-md-9, .ml-sm-auto, .col-lg-10, .pt-3, .px-4;
+}
+
+aside#sidebar {
   @extend .nav, .col-md-2, .flex-column, .bg-dark, .text-light;
 
   a {
