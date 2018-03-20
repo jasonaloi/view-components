@@ -1,0 +1,10 @@
+p.lead
+  | Example:&nbsp;
+  strong = item.titleize
+hr
+code
+  = File.read("app/views/application/examples/#{item}.html.slim")
+hr
+=render "/application/examples/#{item[1..-1]}"
+br
+br

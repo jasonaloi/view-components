@@ -6,6 +6,7 @@ class ViewComponentsController < ApplicationController
 
   def show
     @view_component = params[:id]
+    @examples = get_examples(@view_component)
   end
 
   private
@@ -15,5 +16,13 @@ class ViewComponentsController < ApplicationController
     return [] if @view_components.empty?
     pattern = /app\/views\/application\/(.*)\.html\.*/
     @view_components.map! {|f| f.scan(pattern).last.last}
+  end
+
+  def get_examples(view_component)
+    @examples = Dir["app/views/application/examples/#{view_component}.html.*"]
+    return false if @examples.empty?
+    @examples.concat Dir["app/views/application/examples/#{view_component}--*.html.*"]
+    pattern = /app\/views\/application\/examples\/(.*)\.html\.*/
+    @examples.map! {|f| f.scan(pattern).last.last}
   end
 end
