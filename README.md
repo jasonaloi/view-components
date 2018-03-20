@@ -1,24 +1,5 @@
-# README
+# Rails View Components
+Simple Ruby on Rails 5 view components and Live View Components Catalog.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Demo
+[rails-view-components.herokuapp.com](https://rails-view-components.herokuapp.com)
