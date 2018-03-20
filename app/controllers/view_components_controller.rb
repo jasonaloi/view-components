@@ -30,6 +30,6 @@ class ViewComponentsController < ApplicationController
   def get_comment(view_component)
     file = File.read("app/views/application/#{view_component}.html.slim")
     results = file.scan(/\/ jumbotron: (.*)$/)
-    (results.empty?) ? '' : (results[0][0])
+    (results.empty?) ? false : (results[0][0])
   end
 end

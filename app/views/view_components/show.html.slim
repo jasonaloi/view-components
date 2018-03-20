@@ -1,6 +1,7 @@
 header
   h1.d-inline.display-4=@view_component.titleize
-  span.lead.px-5=@comment
+  - if @comment
+    span.lead.px-5=@comment
 
 br
 - if @examples
@@ -8,6 +9,13 @@ br
         collection: @examples,
                 as: :item
 - else
+  - unless @comment
+    p.lead Add a comment:
+    p
+      code="/ #{@view_component[1..-1]}: A very special comment."
+    p Your comment will appear in the header.
+    hr
+    br
   p.lead.text-danger No Examples Yet
   br
   p
