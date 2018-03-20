@@ -2,11 +2,18 @@
 @import "bootstrap";
 
 body {
-  height: 100vh;
 }
 
 main {
   @extend .col-md-9, .ml-sm-auto, .col-lg-10, .pt-3, .px-4;
+  height: 100vh;
+
+  header {
+    @extend .bg-secondary, .text-light, .p-4, .text-center;
+    margin: -25px;
+    margin-bottom: 30px;
+  }
+
 }
 
 aside#sidebar {

@@ -7,6 +7,7 @@ class ViewComponentsController < ApplicationController
   def show
     @view_component = params[:id]
     @examples = get_examples(@view_component)
+    @comment = get_comment(@view_component)
   end
 
   private
@@ -24,5 +25,11 @@ class ViewComponentsController < ApplicationController
     @examples.concat Dir["app/views/application/examples/#{view_component}--*.html.*"].sort
     pattern = /app\/views\/application\/examples\/(.*)\.html\.*/
     @examples.map! {|f| f.scan(pattern).last.last}
+  end
+
+  def get_comment(view_component)
+    file = File.read("app/views/application/#{view_component}.html.slim")
+    results = file.scan(/\/ jumbotron: (.*)$/)
+    (results.empty?) ? '' : (results[0][0])
   end
 end

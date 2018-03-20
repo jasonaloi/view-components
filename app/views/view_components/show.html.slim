@@ -1,4 +1,7 @@
-h1.display-4=@view_component.titleize
+header
+  h1.d-inline.display-4=@view_component.titleize
+  span.lead.px-5=@comment
+
 br
 - if @examples
   = render partial: "view_component",
